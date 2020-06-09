@@ -1,9 +1,9 @@
 package example
 
-object Hello extends Greeting with App {
-  println(greeting)
-}
+import cats.effect._
+import cats.implicits._
 
-trait Greeting {
-  lazy val greeting: String = "hello"
+object Hello extends IOApp {
+  def run(args: List[String]): IO[ExitCode] =
+    IO(println("Hello, World!")).as(ExitCode.Success)
 }
