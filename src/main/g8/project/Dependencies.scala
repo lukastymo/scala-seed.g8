@@ -2,41 +2,38 @@ import sbt._
 
 object Dependencies {
 
-  object Versions {
-    val cats             = "2.1.1"
-    val catsEffect       = "2.1.2"
-    val logback          = "1.2.1"
-    val scalaLogging     = "3.9.2"
-    val newtype          = "0.4.4"
-    val refined          = "0.9.14"
-    val pureConfig       = "0.12.3"
-    val enumeratum       = "1.6.1"
-
-    val scalaTest = "3.1.0"
-  }
-
   object Libraries {
-    val cats         = "org.typelevel"  %% "cats-core"    % Versions.cats
-    val catsEffect   = "org.typelevel"  %% "cats-effect"  % Versions.catsEffect
+    val catsV = "2.1.1"
+    val catsEffectV = "2.1.2"
+    val logbackV = "1.2.1"
+    val scalaLoggingV = "3.9.2"
+    val newtypeV = "0.4.4"
+    val refinedV = "0.9.14"
+    val pureConfigV = "0.12.3"
+    val enumeratumV = "1.6.1"
 
-    val refinedCore = "eu.timepit" %% "refined"      % Versions.refined
-    val refinedCats = "eu.timepit" %% "refined-cats" % Versions.refined
+    val cats = "org.typelevel" %% "cats-core" % catsV
+    val catsEffect = "org.typelevel" %% "cats-effect" % catsEffectV
 
-    val newtype  = "io.estatico"       %% "newtype"        % Versions.newtype
+    val refinedCore = "eu.timepit" %% "refined" % refinedV
+    val refinedCats = "eu.timepit" %% "refined-cats" % refinedV
 
-    val pureConfig = "com.github.pureconfig" %% "pureconfig" % Versions.pureConfig
+    val newtype = "io.estatico" %% "newtype" % newtypeV
 
-    val logback      = "ch.qos.logback"              % "logback-classic" % Versions.logback
-    val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging"   % Versions.scalaLogging
+    val pureConfig = "com.github.pureconfig" %% "pureconfig" % pureConfigV
 
-    val enumeratum = "com.beachape" %% "enumeratum" % Versions.enumeratum
+    val logback = "ch.qos.logback" % "logback-classic" % logbackV
+    val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % scalaLoggingV
+
+    val enumeratum = "com.beachape" %% "enumeratum" % enumeratumV
   }
 
   object TestLibraries {
-    val scalaTest = "org.scalatest" %% "scalatest" % Versions.scalaTest % Test
+    val scalaTestV = "3.1.2"
+
+    val scalaTest = "org.scalatest" %% "scalatest" % scalaTestV % Test
   }
 
-  object CompilerPlugins {
-  }
+  object CompilerPlugins {}
 
 }
